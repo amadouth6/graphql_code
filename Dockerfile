@@ -7,7 +7,8 @@ RUN apt-get -y update && \
     rm -rf /var/lib/dpkg && \
     addgroup --gid 1000 swh && \
     useradd --gid 1000 --uid 1000 -m -d /opt/graphql swh && \
-    mkdir /etc/swh
+    mkdir /etc/swh \
+    apt-get install -y tree
 
 USER swh
 WORKDIR /opt/graphql
