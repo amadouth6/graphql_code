@@ -3,7 +3,7 @@ FROM python:3.10-bullseye
 
 RUN apt-get -y update && \
     apt-get -y upgrade && \
-    apt-get install -y libcmph-dev librdkafka-dev tree && \
+    apt-get install -y libcmph-dev librdkafka-dev && \
     rm -rf /var/lib/dpkg && \
     addgroup --gid 1000 swh && \
     useradd --gid 1000 --uid 1000 -m -d /opt/graphql swh && \
