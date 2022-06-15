@@ -32,7 +32,7 @@ node {
                 build job: 'updatemanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
         }
     
-    stage('Trigger ManifestUpdate') {
+    stage('Trigger ManifestUpdatecluster2') {
                 echo "triggering updatemanifestjob"
                 build job: 'Mise à jour du cluster 2', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
         }
