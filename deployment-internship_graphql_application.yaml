@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: internshipcluster
+  namespace: argocd
+
+spec:
+  destination:
+    server: https://rancher.euwest.azure.internal.softwareheritage.org/k8s/clusters/c-fvnrx
+    namespace: graphql-namespace
+    
+  project: default
+  source:
+    repoURL: https://github.com/amadouth6/argocd.git
+    targetRevision: internship-cluster
+    path: swh-graphql/
+    helm:
+      releaseName: internshipcluster
+      valueFiles:
+        - myvalues.yaml
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true    
+    
+    automated:
+      selfHeal: true
+      prune: true
