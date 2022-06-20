@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: internshipcluster
+  name: ranchercluster
   namespace: argocd
 
 spec:
   destination:
     server: https://rancher.euwest.azure.internal.softwareheritage.org/k8s/clusters/c-fvnrx
-    namespace: graphql-namespace
+    namespace: graphql-namespaces
     
   project: default
   source:
@@ -15,7 +15,7 @@ spec:
     targetRevision: internship-cluster
     path: swh-graphql/
     helm:
-      releaseName: internshipcluster
+      releaseName: ranchercluster
       valueFiles:
         - myvalues.yaml
 
