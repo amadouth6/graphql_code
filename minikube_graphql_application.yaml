@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: minikubegraph
+  name: minikubegraphql
   namespace: argocd
 
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: graphql-namespace
+    namespace: graphql-minikube
     
   project: default
   source:
@@ -15,7 +15,7 @@ spec:
     targetRevision: minikube-cluster
     path: swh-graphql/
     helm:
-      releaseName: minikubegraph
+      releaseName: minikubegraphql
       valueFiles:
         - myvalues.yaml
         - minikube-value.yml

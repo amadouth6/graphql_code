@@ -7,7 +7,7 @@ metadata:
 spec:
   destination:
     server: https://rancher.euwest.azure.internal.softwareheritage.org/k8s/clusters/c-fvnrx
-    namespace: graphql-namespaces
+    namespace: graphql-rancher
     
   project: default
   source:
